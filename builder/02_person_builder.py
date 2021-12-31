@@ -39,7 +39,17 @@ class PersonBuilder:
 
 
 class PersonNameBuilder(PersonBuilder):
-    pass
+
+    def __init__(self, person):
+        super().__init__(person)
+
+    def name(self, name: str) -> PersonBuilder:
+        self.person.name = name
+        return self
+
+    def surname(self, surname: str) -> PersonBuilder:
+        self.person.surname = surname
+        return self
 
 
 class PersonAddressBuilder(PersonBuilder):
