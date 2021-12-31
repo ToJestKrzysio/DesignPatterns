@@ -53,4 +53,18 @@ class PersonNameBuilder(PersonBuilder):
 
 
 class PersonAddressBuilder(PersonBuilder):
-    pass
+
+    def __init__(self, person):
+        super().__init__(person)
+
+    def at(self, street_address: str) -> PersonAddressBuilder:
+        self.person.street_address = street_address
+        return self
+
+    def postal_code(self, postal_code: str) -> PersonAddressBuilder:
+        self.person.postal_code = postal_code
+        return self
+
+    def city(self, city: str) -> PersonAddressBuilder:
+        self.person.city = city
+        return self
