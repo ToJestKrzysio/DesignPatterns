@@ -68,3 +68,11 @@ class PersonAddressBuilder(PersonBuilder):
     def city(self, city: str) -> PersonAddressBuilder:
         self.person.city = city
         return self
+
+
+if __name__ == '__main__':
+    person_builder = PersonBuilder()
+    person = (person_builder
+              .named.name("John").surname("Smith")
+              .lives.at("London Street 42").city("London").postal_code("42531")
+              )
