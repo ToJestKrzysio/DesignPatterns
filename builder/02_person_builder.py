@@ -75,4 +75,11 @@ if __name__ == '__main__':
     person = (person_builder
               .named.name("John").surname("Smith")
               .lives.at("London Street 42").city("London").postal_code("42531")
-              )
+              .build())
+    print(person)
+
+    person_2 = (person_builder
+                .named.name("Some").surname("Dude")
+                .lives.at("Sunset Boulevard 4/2").city("Los Angeles").postal_code("6432")
+                .build())
+    print(person_2)
