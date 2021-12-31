@@ -43,11 +43,11 @@ class PersonNameBuilder(PersonBuilder):
     def __init__(self, person):
         super().__init__(person)
 
-    def name(self, name: str) -> PersonBuilder:
+    def name(self, name: str) -> PersonNameBuilder:
         self.person.name = name
         return self
 
-    def surname(self, surname: str) -> PersonBuilder:
+    def surname(self, surname: str) -> PersonNameBuilder:
         self.person.surname = surname
         return self
 
