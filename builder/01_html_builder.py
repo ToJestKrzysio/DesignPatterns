@@ -30,6 +30,10 @@ class HtmlTag:
     def __str__(self) -> str:
         return self._show(0)
 
+    @staticmethod
+    def create(tag: str, value: str = "") -> HtmlBuilder:
+        return HtmlBuilder(tag, value)
+
 
 class HtmlBuilder:
     _parent_tag: str
@@ -55,8 +59,8 @@ class HtmlBuilder:
 
 
 if __name__ == '__main__':
-    builder = HtmlBuilder("ul")
+    builder = HtmlTag.create("ul")
     builder.add_child("li", "Hello")
     builder.add_child("li", "World")
-    builder.add_child(HtmlBuilder("p", "Hi"))
+    builder.add_child(HtmlTag.create("p", "Hi"))
     print(builder)
